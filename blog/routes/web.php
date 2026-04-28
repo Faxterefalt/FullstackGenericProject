@@ -7,11 +7,18 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PasswordController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//blog.test => welcome
+//blog.test/contacto => contact
+//blog.test/blog => blog
+//blog.test/nosotros => about
 
-// Rutas públicas (sin autenticación)
+
+Route::view('/','welcome');
+Route::view('contacto','contact');
+Route::view('blog','blog');
+Route::view('nosotros','about');
+
+
 Route::middleware('guest')->group(function () {
     Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
     Route::post('/register', [RegisteredUserController::class, 'store']);
@@ -20,7 +27,7 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 });
 
-// Rutas protegidas (requieren login)
+
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
