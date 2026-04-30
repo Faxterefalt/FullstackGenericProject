@@ -14,9 +14,9 @@ use App\Http\Controllers\PasswordController;
 
 
 Route::view('/','welcome')->name('home');
-Route::view('contacto2','contact')->name('contact');
-Route::view('blogsito','blog')->name('blog');
-Route::view('nosotroz','about')->name('about');
+Route::view('contacto','contact')->name('contact');
+Route::view('blog','blog')->name('blog');
+Route::view('nosotros','about')->name('about');
 
 
 Route::middleware('guest')->group(function () {
