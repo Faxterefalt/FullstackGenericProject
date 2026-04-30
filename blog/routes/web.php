@@ -13,10 +13,10 @@ use App\Http\Controllers\PasswordController;
 //blog.test/nosotros => about
 
 
-Route::view('/','welcome');
-Route::view('contacto','contact');
-Route::view('blog','blog');
-Route::view('nosotros','about');
+Route::view('/','welcome')->name('home');
+Route::view('contacto2','contact')->name('contact');
+Route::view('blogsito','blog')->name('blog');
+Route::view('nosotroz','about')->name('about');
 
 
 Route::middleware('guest')->group(function () {
