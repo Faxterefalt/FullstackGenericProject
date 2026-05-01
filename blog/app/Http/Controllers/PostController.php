@@ -11,6 +11,10 @@ class PostController extends Controller
 {
     public function index(){
         $posts= Post::get();
-        return view('blog',['posts'=>$posts]);
+        return view('posts.index',['posts'=>$posts]);
+    }
+
+    public function show(Post $postid){
+        return view('posts.show',['post'=>$postid]);
     }
 }
