@@ -17,4 +17,12 @@ class PostController extends Controller
     public function show(Post $postid){
         return view('posts.show',['post'=>$postid]);
     }
+
+    public function create(){
+        return view('posts.create');
+    }
+
+        public function store(){
+        return 'Process store';
+    }
 }
