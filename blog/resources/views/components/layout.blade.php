@@ -9,6 +9,10 @@
 <body>
 <x-navigation/>
 
+    @session('status')
+        <div>{{ $value }}</div>
+    @endsession
+
     {{$slot}}
     @isset($sidebar)
         <div id="sidebar">

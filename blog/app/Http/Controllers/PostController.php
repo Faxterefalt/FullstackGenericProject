@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Models\Post; 
 class PostController extends Controller
 
@@ -22,7 +21,13 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-        public function store(){
-        return 'Process store';
+        public function store(Request $request){
+            $post = new Post;
+            $post->title = $request->input('title');
+            $post->body = $request->input('body');
+            $post->save();
+
+            session()->flash('status','Post created! :)');
+            return to_route('posts.index');
     }
 }
