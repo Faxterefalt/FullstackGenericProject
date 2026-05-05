@@ -89,5 +89,7 @@
     "Body" : "Contenido",
     "Create a new post": "Crear nuevo post",
     "Send" : "Enviar",
-    "Back" : "Atrás"
+    "Back" : "Atrás",
+    "Edit" : "Editar",
+    "Edit form": "Formulario de edición"
 }

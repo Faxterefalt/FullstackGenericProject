@@ -13,15 +13,15 @@ class PostController extends Controller
         return view('posts.index',['posts'=>$posts]);
     }
 
-    public function show(Post $postid){
-        return view('posts.show',['post'=>$postid]);
+    public function show(Post $post){
+        return view('posts.show',['post'=>$post]);
     }
 
     public function create(){
         return view('posts.create');
     }
 
-        public function store(Request $request){
+    public function store(Request $request){
 
             $request->validate([
                 'title'=>['required','min:4'],
@@ -34,5 +34,13 @@ class PostController extends Controller
 
             session()->flash('status','Post created! :)');
             return to_route('posts.index');
+    }
+
+    public function edit(Post $post){
+        return view('posts.edit',['post'=>$post]);
+    }
+
+    public function update(Post $post){
+        return 'Edit post';
     }
 }
