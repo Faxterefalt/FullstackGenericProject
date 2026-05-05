@@ -3,14 +3,14 @@
     meta-description="Form to create a new post"
 >
 <h1>
-    Create a new post
+    {{__('Create a new post')}}
 </h1>
 
 
 <form action="{{route('posts.store')}}" method="POST">
     @csrf
     <label>
-        Title <br/>
+        {{ __('Title') }}<br/>
         <input name="title" type="text" value="{{ old('title') }}"/>
 
         @error('title')
@@ -20,7 +20,7 @@
 
     </label><br/>
         <label>
-        Body <br/>
+        {{__('Body')}} <br/>
         <textarea name="body" >{{old('body')}}</textarea>
 
         @error('body')
@@ -29,9 +29,9 @@
         @enderror
 
     </label><br/>
-<button type="submit">Send</button>
+<button type="submit">{{__('Send')}}</button>
 </form>
 
-<a href="{{route('posts.index')}}">Back</a>
+<a href="{{route('posts.index')}}">{{__('Back')}}</a>
 
 </x-layout>
