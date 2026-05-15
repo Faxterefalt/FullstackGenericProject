@@ -93,5 +93,7 @@
     "Edit" : "Editar",
     "Edit form": "Formulario de edición",
     "Post updated!": "¡Post actualizado! :)",
-    "Post created!": "¡Post creado!"
+    "Post created!": "¡Post creado!",
+    "Delete": "Eliminar",
+    "Post deleted!":"¡Post eliminado! :("
 }
