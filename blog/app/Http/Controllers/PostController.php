@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SavePostRequest;
 use Illuminate\Http\Request;
 use App\Models\Post; 
 class PostController extends Controller
@@ -21,37 +22,23 @@ class PostController extends Controller
         return view('posts.create',['post'=>new Post]);
     }
 
-    public function store(Request $request){
+    public function store(SavePostRequest $request){
 
-            $request->validate([
-                'title'=>['required','min:4'],
-                'body'=>['required']
-            ]);
-            $post = new Post;
-            $post->title = $request->input('title');
-            $post->body = $request->input('body');
-            $post->save();
 
-            session()->flash('status','Post created! :)');
-            return to_route('posts.index');
+            Post::create($request->validated());
+
+            return to_route('posts.index')->with('status', __('Post created!'));
     }
 
     public function edit(Post $post){
         return view('posts.edit',['post'=>$post]);
     }
 
-    public function update(Request $request, $post){
-            $request->validate([
-                'title'=>['required','min:4'],
-                'body'=>['required']
-            ]);
+    public function update(SavePostRequest $request, $post){
 
-            $post = Post::find($post);
-            $post->title = $request->input('title');
-            $post->body = $request->input('body');
-            $post->save();
+            $post = Post::find($post);            // $post->title = $request->input('title');
+            $post->update($request->validated());
 
-            session()->flash('status', __('Post updated! :)'));
-            return to_route('posts.show', $post);
+            return to_route('posts.show', $post)->with('status',__('Post updated!'));
     }
 }
