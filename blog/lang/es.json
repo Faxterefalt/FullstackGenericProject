@@ -95,5 +95,9 @@
     "Post updated!": "¡Post actualizado! :)",
     "Post created!": "¡Post creado!",
     "Delete": "Eliminar",
-    "Post deleted!":"¡Post eliminado! :("
+    "Post deleted!":"¡Post eliminado! :(",
+    "Home":"Inicio",
+    "About":"Nosotros",
+    "Contact":"Contacto",
+    "Create new post":"Crear nuevo post"
 }

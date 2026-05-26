@@ -2,7 +2,7 @@
     
 
     <h1>Blog</h1>    
-    <a href="{{route('posts.create')}}">Create new post</a>
+    <a href="{{route('posts.create')}}">{{__("Create new post")}}</a>
     @foreach ($posts as $post)
     <div style="display: flex; align-items: baseline">
         <h2>

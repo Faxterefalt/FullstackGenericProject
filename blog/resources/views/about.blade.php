@@ -1,4 +1,4 @@
-<x-layout meta-title="About" meta-description="About Description" >
+<x-layout :meta-title="__('About')" meta-description="About Description" >
     <h1>Nosotros</h1>    
     <x-slot:sidebar>
         estos somos nosotros
